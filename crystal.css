@@ -1,0 +1,792 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid rgba(191, 216, 214, 0.63);;
+}
+tr:nth-child(even) {
+    background-color: rgba(215, 225, 221, 0.63);;
+}
+th {
+    background-color: #c9dad7;
+    color: rgba(195, 225, 217, 0.63);;
+}
+tr.group-title td {
+    background-color: rgba(195, 225, 217, 0.63);
+    font-weight: bold;
+
+}
+
+.rd{
+     border-radius: 10px;
+ }
+.rd2{
+    border-radius: 15px;
+}
+.page{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+
+/* Footer样式 */
+.footer {
+    /* 设置页脚背景色 */
+    background-color: rgba(212, 225, 221, 0.84);
+    /* 确保页脚始终位于页面底部 */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* 为页脚内容设置一些内边距 */
+    padding: 20px;
+    /* 设置字体颜色 */
+    color: rgba(212, 225, 221, 0.84);
+    /* 清除任何文本装饰 */
+    text-decoration: none;
+    /* 确保文本在页脚内垂直居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 为页脚添加一些阴影效果，使其与页面内容区分开 */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 页脚内的链接样式 */
+.footer a {
+    color: rgba(212, 225, 221, 0.84); /* 链接颜色与页脚文本颜色相同 */
+    text-decoration: none; /* 移除下划线 */
+    transition: color 0.3s ease; /* 添加颜色过渡效果 */
+}
+
+/* 链接鼠标悬停效果 */
+.footer a:hover {
+    color: rgba(212, 225, 221, 0.84); /* 鼠标悬停时改变链接颜色 */
+}
+
+/* 如果页脚包含版权信息或其他小文本 */
+.footer .copyright {
+    font-size: 0.8em; /* 设置小字体 */
+    margin-top: 10px; /* 添加上边距 */
+}
+/* 卡片容器样式 */
+.card {
+    /* 设置卡片的宽度 */
+    /* 设置卡片的背景色 */
+    background-color: rgba(212, 225, 221, 0.84);
+    /* 添加边框 */
+    border: 1px solid #ccc;
+    /* 设置圆角 */
+    border-radius: 5px;
+    /* 添加阴影效果 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* 设置内边距 */
+    padding: 20px;
+    /* 设置卡片之间的间距 */
+    margin-bottom: 20px;
+    /* 过渡效果，使变化更平滑 */
+    transition: box-shadow 0.3s ease;
+}
+
+/* 卡片鼠标悬停效果 */
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 卡片标题样式 */
+.card-title {
+    /* 设置标题字体大小 */
+    font-size: 1.2em;
+    /* 设置标题字体加粗 */
+    font-weight: bold;
+    /* 设置标题与卡片内容之间的间距 */
+    margin-bottom: 10px;
+}
+
+/* 卡片内容样式 */
+.card-content {
+    /* 根据需要设置字体大小、颜色等 */
+    font-size: 1em;
+    color: #333;
+}
+
+/* 卡片图片样式 */
+.card-image {
+    /* 设置图片宽度为100%，以填满卡片宽度 */
+    width: 100%;
+    /* 设置图片高度自动，以保持比例 */
+    height: auto;
+    /* 添加一些内边距或外边距，根据设计需要 */
+    margin-bottom: 10px;
+    /* 设置圆角，与卡片容器保持一致 */
+    border-radius: 5px;
+}
+/* 容器样式，使用Flexbox布局 */
+.group-container {
+    display: flex;
+    flex-wrap: wrap; /* 允许元素换行 */
+    justify-content: space-between; /* 在主轴上分布空间 */
+}
+
+/* 组内元素样式 */
+.group-item {
+    flex: 0 0 calc(33.333% - 20px); /* 设置每个元素的宽度为容器的三分之一减去间距 */
+    margin-bottom: 20px; /* 元素之间的间距 */
+    background-color: rgba(212, 225, 221, 0.84); /* 背景色 */
+    padding: 10px; /* 内边距 */
+    box-sizing: border-box; /* 确保padding和border包含在宽度内 */
+    border: 1px solid #ccc; /* 边框 */
+}
+
+/* 根据需要添加媒体查询以适应不同屏幕尺寸 */
+@media (max-width: 768px) {
+    .group-item {
+        flex: 0 0 calc(50% - 20px); /* 在小屏幕上，每个元素宽度变为容器的一半 */
+    }
+}
+
+@media (max-width: 480px) {
+    .group-item {
+        flex: 0 0 100%; /* 在更小的屏幕上，每个元素占满整行 */
+    }
+}
+/* CSS 样式表 */
+
+/* 重置浏览器默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 设置基础字体样式 */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: rgba(233, 239, 236, 0.9);
+}
+
+/* 设置标题样式 */
+h1, h2, h3 {
+    color: #222;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* 设置段落样式 */
+p {
+    margin-bottom: 15px;
+}
+
+/* 设置链接样式 */
+a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #08f1eb;
+}
+
+/* 设置按钮样式 */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(90, 234, 188, 0.73);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #61e9ed;
+}
+
+/* 设置容器样式 */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 设置列表样式 */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* 设置表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+/* 设置表单样式 */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+}
+
+/* 设置响应式布局 */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}
+/* 图片样式表 */
+
+/* 图片基本样式 */
+.img-style {
+    max-width: 100%; /* 防止图片超出容器宽度 */
+    height: auto; /* 保持图片原始比例 */
+    display: block; /* 消除图片底部的空白 */
+    margin: 0 auto; /* 水平居中 */
+}
+
+/* 圆角图片 */
+.img-rounded {
+    border-radius: 10px; /* 设置圆角 */
+}
+
+/* 圆形图片 */
+.img-circle {
+    border-radius: 50%; /* 设置圆形 */
+    width: 100px; /* 可根据需要设置 */
+    height: 100px; /* 可根据需要设置 */
+    object-fit: cover; /* 保持图片覆盖整个容器 */
+}
+
+/* 带边框的图片 */
+.img-border {
+    border: 2px solid #ccc; /* 设置边框 */
+    padding: 5px; /* 设置内边距 */
+}
+
+/* 阴影图片 */
+.img-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* 添加阴影 */
+}
+
+/* 图片缩放 */
+.img-zoom:hover {
+    transform: scale(1.1); /* 鼠标悬停时放大图片 */
+    transition: transform 0.3s ease-in-out; /* 平滑过渡效果 */
+}
+
+/* 响应式图片 */
+.img-responsive {
+    width: 100%; /* 宽度100% */
+    height: auto; /* 高度自适应 */
+}
+
+/* 图片对齐方式 */
+.img-left {
+    float: left; /* 左对齐 */
+    margin-right: 10px; /* 右边距 */
+}
+
+.img-right {
+    float: right; /* 右对齐 */
+    margin-left: 10px; /* 左边距 */
+}
+
+/* 缩略图 */
+.img-thumbnail {
+    padding: 4px;
+    line-height: 1.4;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 图片画廊样式 */
+.img-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* 水平间距 */
+}
+
+.img-gallery .img-item {
+    margin-bottom: 10px; /* 图片间距 */
+}
+
+/* 自定义样式，根据需要添加 */
+.custom-img {
+    /* 在这里添加你的自定义样式 */
+}
+/* 导航栏样式表 */
+
+/* 导航栏容器 */
+.navbar {
+    background-color: #333; /* 背景色 */
+    color: #fff; /* 文字颜色 */
+    overflow: hidden; /* 隐藏溢出内容 */
+}
+
+/* 导航链接 */
+.navbar a {
+    float: left; /* 浮动链接 */
+    display: block; /* 转换为块级元素 */
+    color: #f2f2f2; /* 链接颜色 */
+    text-align: center; /* 文字居中 */
+    padding: 14px 16px; /* 内边距 */
+    text-decoration: none; /* 去除下划线 */
+}
+
+/* 链接悬停效果 */
+.navbar a:hover {
+    background-color: #ddd; /* 悬停背景色 */
+    color: black; /* 悬停文字颜色 */
+}
+
+/* 当前页面链接 */
+.navbar a.active {
+    background-color: rgba(144, 211, 146, 0.73); /* 当前页面背景色 */
+    color: rgba(212, 225, 221, 0.84); /* 当前页面文字颜色 */
+}
+
+/* 响应式导航栏 */
+@media screen and (max-width: 600px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+/* 可选：下拉导航菜单 */
+.navbar .dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.navbar .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: rgba(212, 225, 221, 0.84);
+    padding: 14px 16px;
+    background-color: inherit;
+    margin: 0;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(212, 225, 221, 0.84);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.navbar .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: rgba(212, 225, 221, 0.84);
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+/* 侧边栏样式表 */
+
+/* 侧边栏容器 */
+.sidebar {
+    height: 100%; /* 侧边栏高度与视口等高 */
+    width: 200px; /* 侧边栏宽度 */
+    position: fixed; /* 侧边栏位置固定 */
+    z-index: 1; /* 保证侧边栏在其他内容之上 */
+    top: 0; /* 侧边栏顶部与视口顶部对齐 */
+    left: 0; /* 侧边栏在左侧 */
+    background-color: #333; /* 背景色 */
+    color: rgba(212, 225, 221, 0.84); /* 文字颜色 */
+    overflow-x: hidden; /* 禁止水平滚动 */
+    padding-top: 20px; /* 内边距顶部 */
+}
+
+/* 侧边栏链接 */
+.sidebar a {
+    padding: 6px 8px 6px 16px; /* 内边距 */
+    text-decoration: none; /* 去除下划线 */
+    font-size: 20px; /* 字体大小 */
+    color: rgba(212, 225, 221, 0.84); /* 链接颜色 */
+    display: block; /* 转换为块级元素 */
+}
+
+/* 侧边栏链接悬停效果 */
+.sidebar a:hover {
+    color: #f1f1f1; /* 悬停文字颜色 */
+    background-color: #555; /* 悬停背景色 */
+}
+
+/* 当前激活的侧边栏链接 */
+.sidebar a.active {
+    background-color: #4CAF50; /* 当前页面背景色 */
+    color: white; /* 当前页面文字颜色 */
+}
+
+/* 可选：侧边栏标题 */
+.sidebar .title {
+    text-align: center; /* 文字居中 */
+    padding: 10px 0; /* 内边距 */
+    font-size: 24px; /* 字体大小 */
+    background-color: #222; /* 背景色 */
+}
+
+/* 可选：侧边栏底部 */
+.sidebar .bottom {
+    position: absolute; /* 绝对定位 */
+    bottom: 0; /* 底部对齐 */
+    width: 100%; /* 宽度100% */
+    text-align: center; /* 文字居中 */
+    padding: 10px 0; /* 内边距 */
+    background-color: #222; /* 背景色 */
+}
+
+/* 子页面样式表 */
+
+/* 页面主体内容 */
+.content {
+    margin: 20px; /* 外边距 */
+    padding: 20px; /* 内边距 */
+    background-color: #fff; /* 背景色 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 阴影效果 */
+}
+
+/* 标题 */
+.content h1 {
+    color: #333; /* 文字颜色 */
+    font-size: 24px; /* 字体大小 */
+    margin-bottom: 20px; /* 下外边距 */
+}
+
+/* 段落 */
+.content p {
+    line-height: 1.6; /* 行高 */
+    color: #666; /* 文字颜色 */
+    margin-bottom: 15px; /* 下外边距 */
+}
+
+/* 列表 */
+.content ul {
+    list-style-type: disc; /* 列表项标记类型 */
+    padding-left: 20px; /* 左内边距 */
+}
+
+.content li {
+    margin-bottom: 5px; /* 下外边距 */
+}
+
+/* 图片 */
+.content img {
+    max-width: 100%; /* 图片最大宽度为容器宽度 */
+    height: auto; /* 图片高度自动 */
+    margin-bottom: 15px; /* 下外边距 */
+}
+
+/* 表格 */
+.content table {
+    width: 100%; /* 表格宽度100% */
+    border-collapse: collapse; /* 合并相邻边框 */
+    margin-bottom: 20px; /* 下外边距 */
+}
+
+.content th, .content td {
+    border: 1px solid #ddd; /* 边框 */
+    padding: 8px; /* 内边距 */
+    text-align: left; /* 文字左对齐 */
+}
+
+.content th {
+    background-color: #f2f2f2; /* 表头背景色 */
+}
+
+/* 链接 */
+.content a {
+    color: #007bff; /* 链接颜色 */
+    text-decoration: none; /* 去除下划线 */
+    transition: color 0.3s ease; /* 颜色过渡效果 */
+}
+
+.content a:hover {
+    color: #0056b3; /* 悬停颜色 */
+    text-decoration: underline; /* 悬停时显示下划线 */
+}
+
+/* 响应式布局 */
+@media screen and (max-width: 600px) {
+    .content {
+        margin: 10px; /* 在小屏幕上减小外边距 */
+    }
+
+    /* 根据需要添加更多小屏幕适配样式 */
+}
+/* 页面提示框样式表 */
+
+/* 提示框容器 */
+.tooltip {
+    position: relative; /* 设置相对定位以便定位提示框内容 */
+    display: inline-block; /* 使得提示框可以与其他元素并排显示 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+}
+
+/* 提示框内容 */
+.tooltip .tooltiptext {
+    visibility: hidden; /* 默认隐藏提示框内容 */
+    width: 120px; /* 提示框宽度 */
+    background-color: #555; /* 背景色 */
+    color: #fff; /* 文字颜色 */
+    text-align: center; /* 文字居中 */
+    padding: 5px; /* 内边距 */
+    border-radius: 6px; /* 圆角 */
+    position: absolute; /* 绝对定位 */
+    z-index: 1; /* 保证提示框在其他内容之上 */
+    bottom: 100%; /* 提示框出现在元素下方 */
+    left: 50%; /* 水平居中 */
+    margin-left: -60px; /* 根据提示框宽度的一半来调整位置 */
+    opacity: 0; /* 初始透明度为0 */
+    transition: opacity 0.3s; /* 透明度过渡效果 */
+}
+
+/* 提示框显示样式 */
+.tooltip:hover .tooltiptext {
+    visibility: visible; /* 鼠标悬停时显示提示框内容 */
+    opacity: 1; /* 透明度为1，完全可见 */
+}
+
+/* 可选样式：提示框箭头 */
+.tooltip .tooltiptext::after {
+    content: ""; /* 创建伪元素 */
+    position: absolute; /* 绝对定位 */
+    top: 100%; /* 箭头位于提示框顶部 */
+    left: 50%; /* 水平居中 */
+    margin-left: -5px; /* 根据箭头宽度的一半来调整位置 */
+    border-width: 5px; /* 箭头边框宽度 */
+    border-style: solid; /* 箭头边框样式 */
+    border-color: #555 transparent transparent transparent; /* 箭头颜色 */
+}
+
+/* 加载图标样式表 */
+
+/* 加载图标容器 */
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: auto;
+    display: block;
+}
+
+/* 加载图标旋转动画 */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 在页面中使用加载图标 */
+.loading-screen {
+    position: fixed; /* 固定定位 */
+    top: 0;
+    left: 0;
+    width: 100%; /* 全屏宽度 */
+    height: 100%; /* 全屏高度 */
+    background-color: rgba(255, 255, 255, 0.7); /* 半透明背景 */
+    z-index: 9999; /* 确保在最上层 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 在需要显示加载图标的地方添加此类 */
+.show-loader {
+    display: flex;
+}
+
+/* 在加载完成后隐藏加载图标 */
+.hide-loader {
+    display: none;
+}
+/* 文本框样式表 */
+
+/* 文本框基础样式 */
+.text-input {
+    width: 200px; /* 文本框宽度 */
+    padding: 10px; /* 内边距 */
+    font-size: 16px; /* 字体大小 */
+    font-family: Arial, sans-serif; /* 字体族 */
+    color: #333; /* 字体颜色 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 4px; /* 圆角 */
+    background-color: #fff; /* 背景色 */
+    transition: border-color 0.3s ease; /* 边框颜色过渡效果 */
+}
+
+/* 文本框焦点状态样式 */
+.text-input:focus {
+    outline: none; /* 移除默认的焦点轮廓 */
+    border-color: #0bf1cb; /* 焦点时边框颜色 */
+    box-shadow: 0 0 0 0.2rem rgba(47, 221, 76, 0.25); /* 焦点时阴影效果 */
+}
+
+/* 可选样式：文本框禁用状态 */
+.text-input[disabled] {
+    background-color: #eee; /* 禁用时背景色 */
+    color: #999; /* 禁用时字体颜色 */
+    cursor: not-allowed; /* 鼠标样式 */
+}
+
+/* 可选样式：文本框错误状态 */
+.text-input.error {
+    border-color: #dc3545; /* 错误时边框颜色 */
+}
+
+/* 在页面中使用文本框 */
+/* 搜索框样式表 */
+
+/* 搜索框基础样式 */
+.search-box {
+    width: 250px; /* 搜索框宽度 */
+    padding: 10px; /* 内边距 */
+    font-size: 16px; /* 字体大小 */
+    font-family: Arial, sans-serif; /* 字体族 */
+    color: #333; /* 字体颜色 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 5px; /* 圆角 */
+    background-color: #fff; /* 背景色 */
+    transition: border-color 0.3s ease; /* 边框颜色过渡效果 */
+}
+
+/* 搜索框聚焦状态样式 */
+.search-box:focus {
+    outline: none; /* 移除默认的聚焦轮廓 */
+    border-color: #007bff; /* 聚焦时边框颜色 */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* 聚焦时阴影效果 */
+}
+
+/* 可选样式：搜索框禁用状态 */
+.search-box[disabled] {
+    background-color: #eee; /* 禁用时背景色 */
+    color: #999; /* 禁用时字体颜色 */
+    cursor: not-allowed; /* 鼠标样式 */
+}
+
+/* 搜索图标样式（如果需要的话） */
+.search-icon {
+    position: relative;
+    left: 10px; /* 图标位置 */
+    top: 8px; /* 图标位置 */
+    color: #999; /* 图标颜色 */
+    font-size: 18px; /* 图标大小 */
+}
+/* 为页面金刚区设置样式 */
+.jingang-area {
+    /* 设置区域宽度 */
+    width: 100%;
+    /* 设置区域最大宽度，防止过宽 */
+    max-width: 1200px;
+    /* 设置区域外边距 */
+    margin: 20px auto;
+    /* 设置区域背景色 */
+    background-color: #f5f5f5;
+    /* 设置区域内边距 */
+    padding: 20px;
+    /* 设置区域边框 */
+    border: 1px solid #ddd;
+    /* 设置区域圆角 */
+    border-radius: 5px;
+    /* 设置区域盒子阴影 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 金刚区内的标题样式 */
+.jingang-area .title {
+    /* 设置标题字体 */
+    font-size: 20px;
+    /* 设置标题字体加粗 */
+    font-weight: bold;
+    /* 设置标题颜色 */
+    color: #333;
+    /* 设置标题内边距 */
+    margin-bottom: 15px;
+}
+
+/* 金刚区内的内容样式 */
+.jingang-area .content {
+    /* 设置内容字体 */
+    font-size: 16px;
+    /* 设置内容颜色 */
+    color: #666;
+    /* 设置内容行高 */
+    line-height: 1.5;
+}
+option:hover{
+    background-color: rgba(11, 241, 203, 0.45);
+}
+option{
+    border-radius: 4px;
+    padding: 4px;
+}
